@@ -56,7 +56,7 @@ Example of config.yml
 
 Install Add-On:
 
-* Settings > Add-ons > Plus > Repositories > Add `https://github.com/ArtemVladimirov/hassio-add-ons`
+* Settings > Add-ons > Plus > Repositories > Add `https://github.com/Artrzn/broadlinkac2mqtt`
 * broadlinkac2mqtt > Install > Start
 
 ### Docker Compose
