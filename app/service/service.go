@@ -418,6 +418,9 @@ func (s *service) GetDeviceStates(ctx context.Context, input *models.GetDeviceSt
 		Clean:              response.Payload[18] >> 2 & 0b00000001,
 	}
 
+	//override device-reported mildew to keep mildew always enabled
+	raw.Mildew = 1
+
 	if raw.Temperature < 16.0 {
 		s.logger.ErrorContext(ctx, "wrong temperature, skip package",
 			slog.String("device", input.Mac),
