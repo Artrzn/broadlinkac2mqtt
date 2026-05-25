@@ -1083,12 +1083,11 @@ func (s *service) UpdateDeviceStates(ctx context.Context, input *models.UpdateDe
 	}
 
 	// DISPLAY
-	// Attention. Inverted logic
-	// Byte 0 - turn ON, Byte 1 - turn OFF
-	var displaySwitch byte = 1
+	// Byte 1 - turn ON, Byte 0 - turn OFF
+	var displaySwitch byte = 0
 	if input.IsDisplayOn != nil {
 		if *input.IsDisplayOn {
-			displaySwitch = 0
+			displaySwitch = 1
 		}
 	} else {
 		displaySwitch = readDeviceStatusRawReturn.Status.Display
